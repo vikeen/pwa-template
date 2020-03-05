@@ -1,25 +1,18 @@
 {
-  "name": "pwa-react-typescript",
+  "name": "pwa-template",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.29",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
-    "typescript": "^3.7.5"
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "morgan": "^1.9.1"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "babel-node backend/server.js",
+    "test": "node bin/test-client.js",
+    "client": "node bin/start-client.js",
     "cypress:open": "cypress open"
   },
   "eslintConfig": {
@@ -38,7 +31,12 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^4.1.0",
-    "react-app-rewired": "^2.1.5"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.8.6",
+    "concurrently": "^5.1.0",
+    "cypress": "^4.1.0"
   }
 }

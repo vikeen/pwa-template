@@ -22,7 +22,7 @@ module.exports = {
         config.collectCoverageFrom = [ `${FRONTEND_DIR}/**/*.{js,jsx,ts,tsx}`, `!${FRONTEND_DIR}/**/*.d.ts` ];
         config.testMatch = [
             `<rootDir>/${FRONTEND_DIR}/**/__tests__/**/*.{js,jsx,ts,tsx}`,
-            `<rootDir>/${FRONTEND_DIR}}/**/*.{spec,test}.{js,jsx,ts,tsx}`,
+            `<rootDir>/${FRONTEND_DIR}/**/*.{spec,test}.{js,jsx,ts,tsx}`,
         ];
         return config;
     },

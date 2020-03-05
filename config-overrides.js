@@ -9,7 +9,23 @@ const path = require('path');
 const FRONTEND_DIR = 'frontend';
 
 module.exports = {
-    // The paths config to use when compiling your react app for development or production.
+    // The Webpack config to use when compiling your react app for development or production.
+    webpack: function(config, env) {
+        // ...add your webpack config
+        return config;
+    },
+    // The Jest config to use when running your jest tests - note that the normal rewires do not
+    // work here.
+    jest: function(config) {
+        // ...add your jest config customisation...
+        config.roots = [ `<rootDir>/${FRONTEND_DIR}` ];
+        config.collectCoverageFrom = [ `${FRONTEND_DIR}/**/*.{js,jsx,ts,tsx}`, `!${FRONTEND_DIR}/**/*.d.ts` ];
+        config.testMatch = [
+            `<rootDir>/${FRONTEND_DIR}/**/__tests__/**/*.{js,jsx,ts,tsx}`,
+            `<rootDir>/${FRONTEND_DIR}}/**/*.{spec,test}.{js,jsx,ts,tsx}`,
+        ];
+        return config;
+    },
     paths: function(paths, env) {
         paths.appIndexJs = path.resolve(__dirname, `${FRONTEND_DIR}/index.tsx`);
         paths.appSrc = path.resolve(__dirname, `${FRONTEND_DIR}`);

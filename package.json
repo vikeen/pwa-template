@@ -40,5 +40,10 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "cypress": "^4.1.0"
+  },
+  "engines": {
+    "node": "12.6.x",
+    "npm": "6.13.x",
+    "yarn":"1.22.x"
   }
 }

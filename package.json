@@ -18,6 +18,8 @@
     "server": "babel-node backend/server.js",
     "test": "node bin/test-client.js",
     "client": "node bin/start-client.js",
+    "client:test": "node bin/test-client.js",
+    "client:build": "node bin/build-client.js",
     "cypress:open": "cypress open"
   },
   "eslintConfig": {
